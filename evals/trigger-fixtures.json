@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "skill": "synthesize-research-cn",
+  "runs_per_query": 3,
+  "trigger_threshold": 0.5,
+  "queries": [
+    {
+      "q": "把 8 份访谈、一次可用性测试和客服主题去重后综合成产品决策简报",
+      "expect": "trigger",
+      "split": "train"
+    },
+    {
+      "q": "问卷说满意但访谈和工单持续抱怨，请保留冲突并判断可能的分层解释",
+      "expect": "trigger",
+      "split": "train"
+    },
+    {
+      "q": "这五份报告可能引用同一底层数据，请建立来源关系后再做证据三角验证",
+      "expect": "trigger",
+      "split": "train"
+    },
+    {
+      "q": "综合不同地区、不同产品版本的研究，区分持续主题和时效变化",
+      "expect": "trigger",
+      "split": "train"
+    },
+    {
+      "q": "一个严重重复扣款案例与大量低影响反馈同时出现，综合时不要让频率掩盖后果",
+      "expect": "trigger",
+      "split": "validation"
+    },
+    {
+      "q": "来源关系不完整，先用保守去重和上下界给我一份受限综合，不要停下来问一串问题",
+      "expect": "trigger",
+      "split": "validation"
+    },
+    {
+      "q": "把访谈主题、问卷分布和使用日志连接成可追溯证据登记与决策建议",
+      "expect": "trigger",
+      "split": "validation"
+    },
+    {
+      "q": "汇总三个研究项目，列出支持证据、负例、少数观点、未知和下一步验证",
+      "expect": "trigger",
+      "split": "validation"
+    },
+    {
+      "q": "我们还没有开展研究，请先设计访谈、问卷和样本停止规则",
+      "expect": "no-trigger",
+      "split": "train",
+      "near_miss_of": "product-research-cn"
+    },
+    {
+      "q": "从工单和评论中提炼客户流失机制、JTBD 和 ICP 假设",
+      "expect": "no-trigger",
+      "split": "train",
+      "near_miss_of": "customer-research-cn"
+    },
+    {
+      "q": "对这 12 份原始深度访谈逐份写备忘录、开放编码并发展主题",
+      "expect": "no-trigger",
+      "split": "train",
+      "near_miss_of": "interview-analyst-cn"
+    },
+    {
+      "q": "分析这份问卷原始表，计算分布、区间、p 值与效应量",
+      "expect": "no-trigger",
+      "split": "validation",
+      "near_miss_of": "measure-survey-analysis-cn"
+    },
+    {
+      "q": "为结算流程制定完整可用性测试计划、主持稿和问题台账",
+      "expect": "no-trigger",
+      "split": "validation",
+      "near_miss_of": "usability-test-plan-cn"
+    },
+    {
+      "q": "估算中国低代码平台市场的 TAM、SAM 和 SOM",
+      "expect": "no-trigger",
+      "split": "validation",
+      "near_miss_of": "discover-market-sizing-cn"
+    },
+    {
+      "q": "只搜索并核验某公司 2026 年公开定价、收入和发布日期，建立 URL 台账",
+      "expect": "no-trigger",
+      "split": "validation",
+      "near_miss_of": "web-evidence-research-cn"
+    },
+    {
+      "q": "请概括这一份两页会议纪要的主要内容",
+      "expect": "no-trigger",
+      "split": "train",
+      "near_miss_of": "single-document-summary"
+    }
+  ]
+}
