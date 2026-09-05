@@ -1,0 +1,4 @@
+interface:
+  display_name: "研究证据综合"
+  short_description: "将多来源研究材料去重、对照并形成可追溯的产品决策证据"
+  default_prompt: "使用 $synthesize-research-cn 综合这些研究材料，保留证据、冲突和未知。"
